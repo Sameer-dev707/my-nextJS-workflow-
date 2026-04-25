@@ -13,16 +13,16 @@ jobs:
         uses:  actions/checkout@v6.0.2
 
       - name: setup nodeJS
-      - uses:  actions/setup-node@v6.4.0
+        uses:  actions/setup-node@v6.4.0
         with:
           node-version: 22.x
           cache: 'npm'
 
       - name: install dependencies
-        uses: npm install 
+        run: npm install 
 
       - name: build next JS app
-        uses: npm run build 
+        run: npm run build 
 
       - name: upload build on Artifacts
         uses: actions/upload-artifact@v7.0.1

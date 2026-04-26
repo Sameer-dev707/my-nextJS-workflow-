@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    concurrency: 
+      group: nextjs-build 
+      cancel-in-progress: true
 
     steps:
       - name: checkout repository
